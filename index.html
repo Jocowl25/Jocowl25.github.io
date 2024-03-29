@@ -51,6 +51,7 @@ padding:0"></div>
 <button id="All"onclick="date='All';plz();document.getElementById('All').style.color='white'" class="button"><u>All</u> </button>
 <button id="2022"onclick="date='2022';plz();document.getElementById('2022').style.color='white'" class="button"><u>2022</u> </button>
 <button id="2023"onclick="date='2023';plz();document.getElementById('2023').style.color='white'" class="button"><u>2023</u> </button>
+<button id="2024"onclick="date='2024';plz();document.getElementById('2024').style.color='white'" class="button"><u>2024</u> </button>
 <br>
 <p id="scroll"style="margin:30px;color:#cccccc;font-size:30px;opacity:50%"><i>Scroll Down...</i><p>
 <div id="content">
@@ -125,6 +126,12 @@ new project("2023","This Website",
 new project("2023","Bad Apple Generator",
 "Based on an internet trend from the 2010s, this recreates the Bad Apple youtube video out of the user's letters of choice. I used a separate program to create data for each frame of the video, which is stored in this program to recreate the frames with characters. I recommend inputing emojis- it looks very cool.<br> Made with HTML, CSS, and p5.js.",
 "BadApple.png",["https://editor.p5js.org/jocowl25/full/jFSNRb_1L"]),
+new project("2024","Punnett Square Generator",
+"A Punnett Square is a biology table used to illustrate all the possible outcomes of a genetic cross. This program generates one with a theoretically infinite number of different traits that can be crossed at the same time. However, after about eleven different traits the number of combonations is so large that the program freezes. Other Punnett Square generators never go higher than five, though, so I'm happy with the results. <br> Made with HTML, CSS, and Javascript",
+"Punnett Square.png",["https://codepen.io/Jocowl/full/yLweJKP"]),
+new project("2024","Light Metronome",
+"Have you ever listened to a song while seeing a light blink or hearing a noise just out of sync with the music? That's what the Light Metronome is for! If you tap to the beat of the song, the light continues to flash at that rate. The BPM can also be set manually. While the program seems simple in concept, it was actually somewhat difficult to make. I'm very proud of it, though— especially the menu.<br> Made with HTML, CSS, and Javascript",
+"Light Metronome.png",["https://codepen.io/Jocowl/full/zYXOMKd"]),
 ];
 for(i=(projectList.length-1);i>-1;i--) {
 	copyElement("template",i,"content");
