@@ -78,7 +78,6 @@ let buttons= document.getElementById("years")
 let years=[2023];
 var test=document.getElementById("test")
 var test2=document.getElementById("test2")
-
 class project {
   constructor(date,title,desc,image,link) {
     this.date = date;
@@ -161,17 +160,18 @@ document.getElementById("scroll").style.display="none";
 var proj= document.getElementById(i)
 	if(date=="All"||date==projectList[i].date) {
         document.getElementById(i).style.display="block"
-		if(elVis(document.getElementById(i),true)) {   
-        if(refresh) {
+		if(elVis(document.getElementById(i),true)||(!top)) {   
+        	if(refresh) {
         proj.style.animationName = 'none';
         proj.offsetHeight;
-        }
-			i%2==0?proj.style.animationName="FadeLeft":proj.style.animationName="FadeRight"
+       		 }
+			i%2==0?proj.style.animationName="FadeLeft":proj.style.animationName="FadeRight"         
      		proj.style.opacity="100%";
 		} else if(!elVis(document.getElementById(i),true)){
             proj.style.opacity="0%";
 			proj.style.animationName=""
     	}
+        top=true;
      } else {
       	proj.style.opacity="0%";
 			proj.style.animationName=""
@@ -180,10 +180,11 @@ var proj= document.getElementById(i)
 }
 function plz() {
 let ButtonList=document.getElementsByClassName("button")
-for(x = 0; x < ButtonList.length; x++){
-    ButtonList[x].style.color = '#8fdef2';
-}
-    for(i=0;i<projectList.length;i++) {animate(i,true);}
+for(x = 0; x < ButtonList.length; x++){ButtonList[x].style.color = '#8fdef2';}
+	let top=false;
+    for(i=projectList.length-1;i>0;i--) {
+    animate(i,true);
+    }
 }
 function setProjectIds() {
 document.getElementById("date").id="tmpdate"
