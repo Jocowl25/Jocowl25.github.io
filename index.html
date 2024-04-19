@@ -73,9 +73,9 @@ padding:0"></div>
 </div>
 </div>
 <script>
+let total=-1
 var date="All";
 let buttons= document.getElementById("years")
-let years=[2023];
 var test=document.getElementById("test")
 var test2=document.getElementById("test2")
 class project {
@@ -140,7 +140,9 @@ for(i=(projectList.length-1);i>-1;i--) {
 }
 
 document.addEventListener("scroll", (event) => {
-    for(i=0;i<projectList.length;i++) {animate(i,false);}
+    for(i=0;i<projectList.length;i++) {
+    checkParity();
+    animate(i,false);}
 });
 function setElements() {
 	document.getElementById(i+"date").innerHTML=projectList[i].date+":";
@@ -165,7 +167,7 @@ var proj= document.getElementById(i)
         proj.style.animationName = 'none';
         proj.offsetHeight;
        		 }
-			i%2==0?proj.style.animationName="FadeLeft":proj.style.animationName="FadeRight"         
+			i%2==total?proj.style.animationName="FadeLeft":proj.style.animationName="FadeRight"         
      		proj.style.opacity="100%";
 		} else if(!elVis(document.getElementById(i),true)){
             proj.style.opacity="0%";
@@ -179,11 +181,22 @@ var proj= document.getElementById(i)
      }
 }
 function plz() {
+total=-1
+test.innerHTML=""
 let ButtonList=document.getElementsByClassName("button")
 for(x = 0; x < ButtonList.length; x++){ButtonList[x].style.color = '#8fdef2';}
 	let top=false;
-    for(i=projectList.length-1;i>0;i--) {
+   checkParity();
+    for(i=projectList.length-1;i>=0;i--) {
     animate(i,true);
+    }
+}
+function checkParity(){
+	 total=-1;
+    for(let i=projectList.length-1;i>=0;i--){
+    	if((date=="All"||date==projectList[i].date)&&total==-1){
+        	total=i%2;
+        }
     }
 }
 function setProjectIds() {
