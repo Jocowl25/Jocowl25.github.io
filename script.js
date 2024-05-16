@@ -4,7 +4,7 @@ const buttons = document.querySelectorAll("button");
 buttons.forEach(button=>{
 button.addEventListener('click',()=>{
 date=button.id;
-plz();
+update();
 button.style.color="white";
 })
 })
@@ -112,7 +112,7 @@ var proj= document.getElementById(i)
              document.getElementById(i).style.display="none"
      }
 }
-function plz() {
+function update() {
 total=-1
 test.innerHTML=""
 for(x = 0; x < buttons.length; x++){buttons[x].style.color = '#8fdef2';}
