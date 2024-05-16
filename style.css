@@ -28,6 +28,7 @@ grid-template-rows: 50px 1fr;
 grid-column-gap: 50px;
 grid-row-gap: 0px;
 align-items:start;
+margin:20px;
 }
 .projectText{
 font-size:50px;
