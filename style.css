@@ -8,6 +8,9 @@ display:inline;background:none;
        text-align:center;
        margin-right:20px;
 	cursor:pointer;
+	font-family: "Josefin Sans", sans-serif;
+	  font-optical-sizing: auto;
+  font-style: normal;
         }
 button:hover {
  color: white;
