@@ -73,6 +73,9 @@ padding:30px;
 	display:inline;
 	grid-row: 2;
 	grid-column: 1;
+	max-height: 400px;
+	object-fit: scale-down;
+
 }
 html,
 body {
