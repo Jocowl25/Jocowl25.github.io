@@ -73,8 +73,8 @@ padding:30px;
 	display:inline;
 	grid-row: 2;
 	grid-column: 1;
-	height: 400px;
-	object-fit: scale-down;
+	max-height: 400px;
+	object-fit: cover;
 object-position: right;
 }
 html,
