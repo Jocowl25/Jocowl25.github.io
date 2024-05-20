@@ -69,7 +69,7 @@ word-wrap: break-word;
 }
 .image{
 padding:30px;
-	width:400px;
+	max-width:400px;
 	display:inline;
 	grid-row: 2;
 	grid-column: 1;
