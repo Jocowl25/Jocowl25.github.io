@@ -75,6 +75,7 @@ padding:30px;
 	grid-column: 1;
 	max-height: 400px;
 	object-fit: cover;
+	object-position: top;
 }
 html,
 body {
