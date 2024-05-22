@@ -37,14 +37,14 @@ new project("2023","Weaver But Better",
 "Weaver.png",
 ["https://editor.p5js.org/jocowl25/full/WVTKVum9v"]),
 new project("2023","Blackjack",
-"Originally this was just a basic, console based Blackjack game to learn Java. However, over the next month or two I added a bunch of features to make the game much more fun, such as different betting modes and a local high score system. The high score used to be global, but Replit's database system didn't work well with it, causing the game to break often.<br> Made with Java.",
-"Blackjack.png",["https://replit.com/@jocowl/Blackjack"]),
+"This started as just a basic, console based Blackjack game to learn Java. However, over the next few months I added more features, including betting modes and a high score system. Since Replit now prevents projects from running without an account, use the Javascript port below to actually play.<br> Originally made with Java.",
+"Blackjack.png",["Original:","https://replit.com/@jocowl/Blackjack","Javascript Port:","https://codepen.io/Jocowl/full/MWdypYJ"]),
 new project("2023","Rock Paper Scissors",
 "A simple Rock Paper Scissors game against a computer, with a display for the probability of getting to that point. Inspired by a CGPGrey video (youtube.com/watch?v=PmWQmZXYd74), this was the first Javascript program I made without p5.js.<br> Made with HTML, CSS, and Javascript.",
 "RPS.png",["https://js.do/jocowl/715827"]),
 new project("2023","Line Bouncing In A Square/Box",
-"You know when the DVD logo bounces around on a screen until it reaches the corner? This is a version of the path a line would take when doing that; plus, the rectangle it bounces in is resizeable. Below are the links to a 2d and 3d version, where the line bounces in a box. <br>Made with p5.js.",
-"DVDthing.png",["https://editor.p5js.org/jocowl25/full/Jl7qkOInW","https://editor.p5js.org/jocowl25/full/ZtzgUc9ps"]),
+"You know when the DVD logo bounces around on a screen until it reaches the corner? This is a version of the path a line would take when doing that. In addition, the rectangle it bounces in is resizeable. I also made a 3d version, where the line bounces in a box. <br>Made with p5.js.",
+"DVDthing.png",["2D version:","https://editor.p5js.org/jocowl25/full/Jl7qkOInW","3D version:","https://editor.p5js.org/jocowl25/full/ZtzgUc9ps"]),
 new project("2023","Grapher",
 "This is a graphing calculator with an input for one equation and a readjustable zoom. It was harder to make than I thought; I ended up having to recreate PEMDAS manually due to the input being a string. Although this was harder than I thought it would be, it was very rewarding. <br> Made with p5.js.",
 "Grapher.png",["https://editor.p5js.org/jocowl25/full/Y3oCqWg1x"]),
@@ -86,7 +86,14 @@ function setElements() {
             document.getElementById(i+"desc").innerHTML +="<br>"
             document.getElementById(i+"desc").innerHTML +="<span>"
     for(a=0;a<projectList[i].link.length;a++) {
-    	document.getElementById(i+"desc").innerHTML += `<a style="display:block;font-size: 2vw;color:#8fdef2" href=${projectList[i].link[a]} target="_blank">${projectList[i].link[a]}</a>`;
+    	if(projectList[i].link[a].substr(0, 3)==("htt")){
+        document.getElementById(i+"desc").innerHTML += `<a style="display:block;font-size: 2vw;color:#8fdef2" href=${projectList[i].link[a]} target="_blank">${projectList[i].link[a]}</a>`;
+        }else{
+            if(a!=0){
+                document.getElementById(i+"desc").innerHTML +="<br>"
+            }
+            document.getElementById(i+"desc").innerHTML +=projectList[i].link[a]
+        }
     }
 }
 function animate(i,refresh) {
