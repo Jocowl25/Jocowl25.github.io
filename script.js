@@ -40,7 +40,7 @@ new project("2023","Blackjack",
 "This started as just a basic, console based Blackjack game to learn Java. However, over the next few months I added more features, including betting modes and a high score system. Since Replit now prevents projects from running without an account, use the Javascript port below to actually play.<br> Originally made with Java.",
 "Blackjack.png",["Original:","https://replit.com/@jocowl/Blackjack","Javascript Port:","https://codepen.io/Jocowl/full/MWdypYJ"]),
 new project("2023","Rock Paper Scissors",
-"A simple Rock Paper Scissors game against a computer, with a display for the probability of getting to that point. Inspired by a CGPGrey video (youtube.com/watch?v=PmWQmZXYd74), this was the first Javascript program I made without p5.js.<br> Made with HTML, CSS, and Javascript.",
+"A simple Rock Paper Scissors game against a computer, with a display for the probability of getting to that point. Inspired by a <a class='link' target='_blank' href='https://youtube.com/watch?v=PmWQmZXYd74'>CGP Grey video</a>, this was the first Javascript program I made without p5.js.<br> Made with HTML, CSS, and Javascript.",
 "RPS.png",["https://js.do/jocowl/715827"]),
 new project("2023","Line Bouncing In A Square/Box",
 "You know when the DVD logo bounces around on a screen until it reaches the corner? This is a version of the path a line would take when doing that. In addition, the rectangle it bounces in is resizeable. I also made a 3d version, where the line bounces in a box. <br>Made with p5.js.",
@@ -63,6 +63,12 @@ new project("2024","Punnett Square Generator",
 new project("2024","Light Metronome",
 "Have you ever listened to a song while seeing a light blink or hearing a noise just out of sync with the music? That's what the Light Metronome is for! If you tap to the beat of the song, the light continues to flash at that rate. The BPM can also be set manually. While the program seems simple in concept, it was actually somewhat difficult to make. I'm very proud of it, though— especially the menu.<br> Made with HTML, CSS, and Javascript.",
 "Light Metronome.png",["https://codepen.io/Jocowl/full/zYXOMKd"]),
+new project("2024","Heart-dle",
+    "A heart shaped clone of the <a class='link' target='_blank' href='https://wafflegame.net/daily'>waffle word game</a>, this also features a famous singer and band. It was my first time using objects in a larger project, and I'm very happy with my replication. At some point I want to add random word generation. <br> Made With HTML, CSS, and Javascript.",
+    "Heartle.png",["https://codepen.io/Jocowl/full/abxxQLW"]),
+    new project("2024","Writing Portfolio",
+        "This is a small website of stories and poems I wrote. Not that much code to see here, but it's worth a look if you like reading. For a something so small it has a suprising amount of CSS.<br> Made With HTML, CSS, and Javascript.",
+        "Portfolio.png",["https://codepen.io/Jocowl/full/MWdJqmd"])
 ];
 for(i=(projectList.length-1);i>-1;i--) {
 	copyElement("template",i,"content");
