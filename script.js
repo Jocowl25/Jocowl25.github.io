@@ -64,11 +64,11 @@ new project("2024","Light Metronome",
 "Have you ever listened to a song while seeing a light blink or hearing a noise just out of sync with the music? That's what the Light Metronome is for! If you tap to the beat of the song, the light continues to flash at that rate. The BPM can also be set manually. While the program seems simple in concept, it was actually somewhat difficult to make. I'm very proud of it, though— especially the menu.<br> Made with HTML, CSS, and Javascript.",
 "Light Metronome.png",["https://codepen.io/Jocowl/full/zYXOMKd"]),
 new project("2024","Heart-dle",
-    "A heart shaped clone of the <a class='link' target='_blank' href='https://wafflegame.net/daily'>waffle word game</a>, this also features a famous singer and band. It was my first time using objects in a larger project, and I'm very happy with my replication. At some point I want to add random word generation. <br> Made With HTML, CSS, and Javascript.",
-    "Heartle.png",["https://codepen.io/Jocowl/full/abxxQLW"]),
-    new project("2024","Writing Portfolio",
-        "This is a small website of stories and poems I wrote. Not that much code to see here, but it's worth a look if you like reading. For something so small it has a suprising amount of CSS.<br> Made With HTML, CSS, and Javascript.",
-        "Portfolio.png",["https://codepen.io/Jocowl/full/MWdJqmd"])
+"A heart shaped clone of the <a class='link' target='_blank' href='https://wafflegame.net/daily'>waffle word game</a>, this also features a famous singer and band. It was my first time using objects in a larger project, and I'm very happy with my replication. At some point I want to add random word generation. <br> Made With HTML, CSS, and Javascript.",
+"Heartle.png",["https://codepen.io/Jocowl/full/abxxQLW"]),
+new project("2024","Writing Portfolio",
+"This is a small website of stories and poems I wrote. Not that much code to see here, but it's worth a look if you like reading. For something so small it has a suprising amount of CSS.<br> Made With HTML, CSS, and Javascript.",
+"Portfolio.png",["https://codepen.io/Jocowl/full/MWdJqmd"])
 ];
 for(i=(projectList.length-1);i>-1;i--) {
 	copyElement("template",i,"content");
