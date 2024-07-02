@@ -1,15 +1,14 @@
-let total=-1
-var date="All";
+let parity=-1
+let firstElementFound;
+let date="All";
 const buttons = document.querySelectorAll("button");
 buttons.forEach(button=>{
-button.addEventListener('click',()=>{
-date=button.id;
-update();
-button.style.color="white";
+    button.addEventListener('click',()=>{
+        date=button.id;
+        update();
+        button.style.color="white";
+    })
 })
-})
-var test=document.getElementById("test")
-var test2=document.getElementById("test2")
 class project {
   constructor(date,title,desc,image,link) {
     this.date = date;
@@ -109,19 +108,19 @@ function animate(i,refresh) {
 document.getElementById("scroll").style.display="none";
 var proj= document.getElementById(i)
 	if(date=="All"||date==projectList[i].date) {
-        document.getElementById(i).style.display="grid"
-		if(elVis(document.getElementById(i),true)||(!top)) {   
+        proj.style.display="grid"
+		if(elVis(proj)||(!firstElementFound)) {   
         	if(refresh) {
         proj.style.animationName = 'none';
         proj.offsetHeight;
        		 }
-			i%2==total?proj.style.animationName="FadeLeft":proj.style.animationName="FadeRight"         
+			i%2==parity?proj.style.animationName="FadeLeft":proj.style.animationName="FadeRight"         
      		proj.style.opacity="100%";
-		} else if(!elVis(document.getElementById(i),true)){
+		} else if(!elVis(proj)){
             proj.style.opacity="0%";
 			proj.style.animationName=""
     	}
-        top=true;
+        firstElementFound=true;
      } else {
       	proj.style.opacity="0%";
 			proj.style.animationName=""
@@ -129,20 +128,19 @@ var proj= document.getElementById(i)
      }
 }
 function update() {
-total=-1
-test.innerHTML=""
+parity=-1
 for(x = 0; x < buttons.length; x++){buttons[x].style.color = '#8fdef2';}
-	let top=false;
+ firstElementFound=false;
    checkParity();
     for(i=projectList.length-1;i>=0;i--) {
     animate(i,true);
     }
 }
 function checkParity(){
-	 total=-1;
+	 parity=-1;
     for(let i=projectList.length-1;i>=0;i--){
-    	if((date=="All"||date==projectList[i].date)&&total==-1){
-        	total=i%2;
+    	if((date=="All"||date==projectList[i].date)&&parity==-1){
+        	parity=i%2;
         }
     }
 }
@@ -169,15 +167,13 @@ function copyElement(elementId,newId,id) {
 	nue.id=newId;
 }
 
-function elVis(el,partiallyVisible){
+function elVis(el){
     const {top,bottom} = el.getBoundingClientRect();
     const innerHeight = window.innerHeight;
     if(((top < 0) &&(bottom > innerHeight))){
         return true;
     }
-    return partiallyVisible
-      ? ((top > 0 && top < innerHeight) ||
-          (bottom > 0 && bottom < innerHeight))
-      : top >= 0 && bottom <= innerHeight;
+    return ((top > 0 && top < innerHeight) || (bottom > 0 && bottom < innerHeight))
+   
 }
 
