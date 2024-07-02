@@ -20,7 +20,9 @@ body {
 }
 button {
 display:inline;background:none; 
-    border:none;font-size:35px;color:#8fdef2;
+    border:none;
+	font-size:35px;
+	color:#8fdef2;
        background: none;
        border: none;
        text-align:center;
@@ -32,6 +34,25 @@ display:inline;background:none;
         }
 button:hover {
  color: white;
+}
+.buttonFlex{
+--border:2px dotted;
+border-image:-webkit-linear-gradient(0deg,#15106b 0%,rgb(73, 2, 73) 99%) 10;
+border-top:var(--border);
+border-bottom:var(--border);
+border-radius:10px;
+display:inline-flex;
+width:100%;
+white-space:nowrap;
+overflow-x:auto;
+}
+#yearHeading{
+	flex-shrink: 0;
+	display:inline;
+	color:white;
+	font-size:40px;
+	margin:30px;
+	width:max-content;
 }
 #All {
  color: white;
