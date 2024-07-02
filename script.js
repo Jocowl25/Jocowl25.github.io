@@ -105,27 +105,27 @@ function setElements() {
     }
 }
 function animate(i,refresh) {
-document.getElementById("scroll").style.display="none";
-var proj= document.getElementById(i)
+    document.getElementById("scroll").style.display="none";
+    let proj= document.getElementById(i)
 	if(date=="All"||date==projectList[i].date) {
         proj.style.display="grid"
 		if(elVis(proj)||(!firstElementFound)) {   
         	if(refresh) {
-        proj.style.animationName = 'none';
-        proj.offsetHeight;
-       		 }
+                 proj.style.animationName = 'none';
+                 proj.offsetHeight;
+       		}
 			i%2==parity?proj.style.animationName="FadeLeft":proj.style.animationName="FadeRight"         
-     		proj.style.opacity="100%";
-		} else if(!elVis(proj)){
-            proj.style.opacity="0%";
-			proj.style.animationName=""
-    	}
-        firstElementFound=true;
-     } else {
+     	    proj.style.opacity="100%";
+		    } else if(!elVis(proj)){
+                proj.style.opacity="0%";
+			    proj.style.animationName=""
+    	    }
+            firstElementFound=true;
+    } else {
       	proj.style.opacity="0%";
-			proj.style.animationName=""
-             document.getElementById(i).style.display="none"
-     }
+		proj.style.animationName=""
+        proj.style.display="none"
+    }
 }
 function update() {
 parity=-1
