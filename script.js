@@ -68,7 +68,10 @@ new project("2024","Heart-dle",
 "Heartle.png",["https://codepen.io/Jocowl/full/abxxQLW"]),
 new project("2024","Writing Portfolio",
 "This is a small website of stories and poems I wrote. Not that much code to see here, but it's worth a look if you like reading. For something so small it has a suprising amount of CSS.<br> Made With HTML, CSS, and Javascript.",
-"Portfolio.png",["https://codepen.io/Jocowl/full/MWdJqmd"])
+"Portfolio.png",["https://codepen.io/Jocowl/full/MWdJqmd"]),
+new project("2024","Scrong",
+"This is a small pong game where the game scrolls up and down when the paddle moves up and down. The ball gets faster and the color changes after every bounce. It's difficult, yet very fun, and has mobile support. The combination of these factors make the game suprisingly addicting.<br> Made With HTML, CSS, and Javascript.",
+"Scrong.png",["https://codepen.io/Jocowl/full/eYarzrj"])
 ];
 for(i=(projectList.length-1);i>-1;i--) {
 	copyElement("template",i,"content");
