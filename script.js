@@ -170,11 +170,14 @@ function copyElement(elementId,newId,id) {
 }
 
 function elVis(el,partiallyVisible){
-    const { top, left, bottom, right } = el.getBoundingClientRect();
-    const { outerHeight, outerWidth } = window;
+    const {top,bottom} = el.getBoundingClientRect();
+    const innerHeight = window.innerHeight;
+    if(((top < 0) &&(bottom > innerHeight))){
+        return true;
+    }
     return partiallyVisible
-      ? ((top > 0 && top < outerHeight) ||
-          (bottom > 0 && bottom < outerHeight))
-      : top >= 0 && bottom <= outerHeight;
+      ? ((top > 0 && top < innerHeight) ||
+          (bottom > 0 && bottom < innerHeight))
+      : top >= 0 && bottom <= innerHeight;
 }
 
