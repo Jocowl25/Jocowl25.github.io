@@ -1,14 +1,32 @@
 let parity=-1
 let firstElementFound;
 let date="All";
+let close=true;
+const emailwrapper = document.getElementById("emailwrapper") 
 const buttons = document.querySelectorAll("button");
 buttons.forEach(button=>{
+if(button.id!="emailclose"){
     button.addEventListener('click',()=>{
         date=button.id;
         update();
         button.style.color="white";
     })
+}
 })
+document.getElementById("emailbutton").addEventListener("click",()=>{
+    emailwrapper.style.display="flex";
+})
+document.getElementById("emailbutton").addEventListener("mouseleave",()=>{
+    emailwrapper.style.display="none";
+    close=true
+})
+document.body.addEventListener("mousedown",(e)=>{
+    if(e.target!=document.getElementById("emailbutton")&&e.target!=document.getElementById("linkimage")&&e.target!=emailwrapper){
+    emailwrapper.style.display="none";
+    close=true
+    }
+})
+
 class project {
   constructor(date,title,desc,image,link) {
     this.date = date;
@@ -174,6 +192,4 @@ function elVis(el){
         return true;
     }
     return ((top > 0 && top < innerHeight) || (bottom > 0 && bottom < innerHeight))
-   
 }
-

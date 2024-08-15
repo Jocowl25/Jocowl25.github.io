@@ -11,10 +11,25 @@
 <link rel="stylesheet" href="style.css">
 </head>
 <body style="max-width: 100%;">
-<div class="gradientBackground"></div>
+<div id="grad" class="gradientBackground"></div>
 <div style="overflow-x: hidden;">
-<h1 style="color:white;font-size:80px;margin:30px"> Jocowl's Stuff</h1>
-<p class="topText" style="color:white;font-size:45px;margin:30px;margin-right:30%">Welcome to my website! I'm Jocowl. This is a collection of everything I've coded, all organized by year. Perhaps you'll find one of them interesting.</p>
+<div class=topwrapper> 
+   <div class="titlewrapper">
+   <h1 class="title"> Jocowl's Stuff</h1>
+   </div>
+   <div class="buttonWrapper">
+   <a class=linkbutton  target=”_blank” href="https://github.com/Jocowl25"><img class=linkimage src="linkImages/github.png" alt="link to github profile"></a>
+   <a class=linkbutton  target=”_blank” href="https://codepen.io/Jocowl"><img class=linkimage src="linkImages/codepen.png" alt="link to codepen profile"></a>
+   <a class=linkbutton  target=”_blank” href="https://editor.p5js.org/jocowl25/sketches"><img class=linkimage src="linkImages/p5.png" alt="link to p5.js profile"></a>
+   <a class=linkbutton id="emailbutton">
+      <img id="linkimage" class=linkimage src="linkImages/gmail.png" alt="show email">
+      <div id="emailwrapper">
+         jocowl25@gmail.com
+      </div>
+   </a>
+   </div>
+</div>
+<p class="topText" id=topParagraph>Welcome to my website! I'm Jocowl. This is a collection of everything I've coded, all organized by year. Perhaps you'll find one of them interesting.</p>
    <div class="buttonFlex">
    <p class="topText" id="yearHeading">Travel to Year:</p>
    <button id="All"><u>All</u> </button>
