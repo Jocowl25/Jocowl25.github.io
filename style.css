@@ -61,6 +61,7 @@ body{
 	border-radius:100px;
 }
 .linkbutton{
+	border-radius:100px;
 	--height:min(5vw,80px);
 	text-align:center;
 	margin:20px;
@@ -70,7 +71,7 @@ body{
 }
 @media (hover: hover) {
 .linkbutton:hover{
-	--height:min(6vw,85px);
+	box-shadow: 0 0 12px 1px white;
 }
 }
 button {
@@ -97,7 +98,7 @@ border-top:var(--border);
 border-bottom:var(--border);
 border-radius:10px;
 display:inline-flex;
-width:95vw;
+width:100vw;
 white-space:nowrap;
 overflow-x:auto;
 }
@@ -181,7 +182,7 @@ padding:30px;
 
 .link{
 	text-decoration: none;
-color:hsl(192, 79%, 75%);
+color:hsl(194, 13%, 20%);
 cursor:pointer;
 }
 #emailwrapper{
