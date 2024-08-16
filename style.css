@@ -71,6 +71,8 @@ body{
 }
 @media (hover: hover) {
 .linkbutton:hover{
+	--height:min(6vw,85px);
+	margin: calc(20px - (min(6vw,85px) / 2 - min(5vw,80px) / 2));
 	box-shadow: 0 0 12px 1px white;
 }
 }
@@ -182,7 +184,7 @@ padding:30px;
 
 .link{
 	text-decoration: none;
-color:hsl(194, 13%, 20%);
+color:#8fdef2;
 cursor:pointer;
 }
 #emailwrapper{
