@@ -28,25 +28,40 @@ body{
 	background-image:linear-gradient(135deg,#181487 0%,purple 99%);
 	padding:0;
 }
+.topwrapper{
+	display:flex;
+	align-items: center;
+	height:150px;
+}
 .title{
+	line-height: 2px;
+	height:90px;
+	padding:none;
+	margin-left:30px;
 	color:white;
 	font-size:min(5vw,80px);
-	margin:30px;
-	display:inline;
+	display:inline-flex;
 	vertical-align:center;
 	align-items: center;
+	text-align: center;
+	position:relative;
+	top:10px;
+	bottom:4px;
 }
 .titlewrapper{
-	display:flex;
+	height:100%;
+	display:inline-flex;
 	vertical-align:center;
 	align-items: center;
 }
 .topwrapper{
 	display:inline-flex;
-	height:150px;
 	width:95vw;
+	margin-bottom:2px;
 }
 .buttonwrapper{
+	position:relative;
+	top:14px;
 	height:100%;
 	color:white;
 	display:inline-flex;
@@ -54,20 +69,24 @@ body{
 	vertical-align:center;
 	justify-content:right;
 	flex-grow: 0.6;
+	padding:0;
 }
 .linkimage{
 	width:var(--height);
 	height:var(--height);
-	border-radius:100px;
+	margin:none;
+	border-radius: 200px; /* need this for normal border */
+	line-height: 1em;
 }
 .linkbutton{
-	border-radius:100px;
+	line-height: 1em;
+	border-radius: 200px; /* need this for glowy border */
 	--height:min(5vw,80px);
 	text-align:center;
 	margin:20px;
 	position:relative;
 	cursor:pointer;
-	top:1px;
+	top:0px;
 }
 @media (hover: hover) {
 .linkbutton:hover{
