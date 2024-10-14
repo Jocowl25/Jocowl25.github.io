@@ -160,7 +160,7 @@ width:95vw;
 animation-duration:2s;
 background-image:linear-gradient(135deg,rgba(24, 20, 135, var(--opacty)) 0%,rgba(100, 20, 128, var(--opacty)) 99%);
 color:white;
-display:none;
+display:grid;
 grid-template-columns: 400px 1fr 10px;
 grid-template-rows: 50px 1fr;
 grid-column-gap: 50px;
