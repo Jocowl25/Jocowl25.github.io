@@ -26,6 +26,13 @@ document.body.addEventListener("mousedown",(e)=>{
     close=true
     }
 })
+document.body.addEventListener("mousemove",(e)=>{
+    let stars=document.getElementById("stars")
+    let paralax=-0.03
+    let x=(e.clientX - window.innerWidth/2) *paralax
+    let y=(e.clientY - window.innerHeight/2) * paralax
+    stars.style.transform=`rotateZ(20deg) translateX(${x}px) translateY(${y}px)`
+})
 
 class project {
   constructor(date,title,desc,image,link) {
@@ -135,7 +142,7 @@ function animate(i,refresh) {
                  proj.offsetHeight;
        		}
 			i%2==parity?proj.style.animationName="FadeLeft":proj.style.animationName="FadeRight"         
-     	    proj.style.opacity="100%";
+     	    proj.style.opacity="90%";
 		    } else if(!elVis(proj)){
                 proj.style.opacity="0%";
 			    proj.style.animationName=""

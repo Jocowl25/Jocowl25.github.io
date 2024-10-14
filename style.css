@@ -28,6 +28,19 @@ body{
 	background-image:linear-gradient(135deg,#181487 0%,purple 99%);
 	padding:0;
 }
+#stars{
+    filter: invert(70%);
+    background-image: url(stars.png);
+    width:200vw;
+    height:200vh;
+    background-repeat: repear;
+    background-size: 10%;
+    position:fixed;
+    top:-50vh;
+    left:-50vw;
+    transform: rotateZ(20deg);
+    opacity: 50%;
+}
 .topwrapper{
 	display:flex;
 	align-items: center;
@@ -140,10 +153,11 @@ font-family: "Sarala", sans-serif;
   font-style: normal;
 }
 .projectBox {
-box-shadow: 2px 2px 50px 2px rgba(0, 0, 0, 0.2);
+--opacty:0.4;
+box-shadow: 2px 2px 50px 2px rgba(0, 0, 0, 0.3);
 width:95vw;
 animation-duration:2s;
-background-color:rgba(122, 116, 242,0.001);
+background-image:linear-gradient(135deg,rgba(24, 20, 135, var(--opacty)) 0%,rgba(100, 20, 128, var(--opacty)) 99%);
 color:white;
 display:none;
 grid-template-columns: 400px 1fr 10px;
