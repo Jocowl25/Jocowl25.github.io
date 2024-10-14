@@ -40,7 +40,7 @@ body{
     transform: rotateZ(20deg);
     opacity: 40%;
 	overflow:hidden;
-	z-index:-1;
+	z-index:-100;
 }
 .topwrapper{
 	display:flex;
@@ -167,6 +167,7 @@ grid-column-gap: 50px;
 grid-row-gap: 0px;
 align-items:start;
 margin:20px;
+z-index:100;
 }
 .projectText{
 font-size:50px;
