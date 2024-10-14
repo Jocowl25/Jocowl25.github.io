@@ -29,17 +29,18 @@ body{
 	padding:0;
 }
 #stars{
-    filter: invert(70%);
+    filter: invert(100%);
     background-image: url(stars.png);
     width:200vw;
     height:200vh;
-    background-repeat: repear;
-    background-size: 10%;
+    background-size: 7%;
     position:fixed;
     top:-50vh;
     left:-50vw;
     transform: rotateZ(20deg);
-    opacity: 50%;
+    opacity: 40%;
+	overflow:hidden;
+	z-index:-1;
 }
 .topwrapper{
 	display:flex;

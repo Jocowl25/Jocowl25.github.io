@@ -28,9 +28,9 @@ document.body.addEventListener("mousedown",(e)=>{
 })
 document.body.addEventListener("mousemove",(e)=>{
     let stars=document.getElementById("stars")
-    let paralax=-0.03
-    let x=(e.clientX - window.innerWidth/2) *paralax
-    let y=(e.clientY - window.innerHeight/2) * paralax
+    let parallax=-0.02
+    let x=(e.clientX - window.innerWidth/2) *parallax
+    let y=(e.clientY - window.innerHeight/2) * parallax
     stars.style.transform=`rotateZ(20deg) translateX(${x}px) translateY(${y}px)`
 })
 
