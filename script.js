@@ -2,6 +2,7 @@ let parity=-1
 let firstElementFound;
 let date="All";
 let close=true;
+let open=false;
 const emailwrapper = document.getElementById("emailwrapper") 
 const buttons = document.querySelectorAll("button");
 buttons.forEach(button=>{
@@ -69,6 +70,10 @@ function animate(i,refresh) {
 		proj.style.animationName=""
         proj.style.display="none"
     }
+	if(open){
+		fixHeight()
+		open=false;
+	}
 }
 function update() {
 parity=-1
