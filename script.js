@@ -10,6 +10,7 @@ if(button.id!="emailclose"){
         console.clear()
         date=button.id;
         update();
+       fixHeight()
         button.style.color="white";
     })
 }
@@ -27,9 +28,9 @@ document.body.addEventListener("mousedown",(e)=>{
     close=true
     }
 })
-document.body.addEventListener("mousemove",(e)=>{
+document.body.addEventListener("mousemove",(e)=>{ //Paralax
     let stars=document.getElementById("stars")
-    let parallax=-0.02
+    let parallax=-0.04
     let x=(e.clientX - window.innerWidth/2) *parallax
     let y=(e.clientY - window.innerHeight/2) * parallax
     stars.style.transform=`rotateZ(20deg) translateX(${x}px) translateY(${y}px)`
@@ -39,13 +40,12 @@ const projectList=document.querySelectorAll(".projectBox");
 for(let i=0;i<projectList.length;i++) {
     projectList[i].style.opacity="0%";
 }
-
 document.addEventListener("scroll", () => {
     for(let i=0;i<projectList.length;i++) {
     checkParity();
     animate(i,false);}
 });
-
+document.addEventListener("DOMContentLoaded", (event) => {fixHeight()});
 function animate(i,refresh) {
     document.getElementById("scroll").style.display="none";
     let proj= projectList[i]
@@ -95,4 +95,10 @@ function elVis(el){
         return true;
     }
     return ((top > 0 && top < innerHeight) || (bottom > 0 && bottom < innerHeight))
+}
+function fixHeight(){
+    let height=document.body.scrollHeight
+    document.getElementById("starholder").style.height=height+"px"
+    document.getElementById("stars").style.height=height*2+"px"
+    document.getElementById("stars").style.width=height*2+"px"
 }
