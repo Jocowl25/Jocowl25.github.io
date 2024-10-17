@@ -31,6 +31,7 @@ body{
 	padding:0;
 }
 #stars{
+	display:none; /* delete later*/
     filter: invert(100%);
     background-image: url(stars.png);
     width:200vw;
