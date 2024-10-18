@@ -46,7 +46,12 @@ document.addEventListener("scroll", () => {
     checkParity();
     animate(i,false);}
 });
+
 document.addEventListener("DOMContentLoaded", (event) => {fixHeight()});
+window.addEventListener("load", (event) => {fixHeight()}); 
+//loads twice at start- once so star bg is aligned, again so it gets to bottom of page
+
+
 function animate(i,refresh) {
     document.getElementById("scroll").style.display="none";
     let proj= projectList[i]
@@ -105,5 +110,5 @@ function fixHeight(){
     let height=document.body.scrollHeight
     document.getElementById("starholder").style.height=height+"px"
     document.getElementById("stars").style.height=height*2+"px"
-    document.getElementById("stars").style.width=height*2+"px"
+    document.getElementById("stars").style.width=height*3+"px"
 }

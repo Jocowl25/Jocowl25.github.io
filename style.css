@@ -1,5 +1,5 @@
-@keyframes FadeLeft { 0%   {opacity:30%;transform: translateX(-700px);}25%  {}50%  {} 75%  {}100% {} }
-@keyframes FadeRight {0%   {opacity:30%;transform: translateX(700px);}25%  {}50%  {}75%  {}100% {}}
+@keyframes FadeLeft { 0%   {opacity:20%;transform: translateX(-700px);}25%  {}50%  {} 75%  {}100% {} }
+@keyframes FadeRight {0%   {opacity:20%;transform: translateX(700px);}25%  {}50%  {}75%  {}100% {}}
 
 html,
 body {
@@ -31,7 +31,7 @@ body{
 	padding:0;
 }
 #stars{
-	display:none; /* delete later*/
+ /* delete later*/
     filter: invert(100%);
     background-image: url(stars.png);
     width:200vw;
@@ -168,8 +168,8 @@ font-family: "Sarala", sans-serif;
   font-style: normal;
 }
 .projectBox {
---opacty:0.4;
-box-shadow: 2px 2px 50px 2px rgba(0, 0, 0, 0.3);
+--opacty:0.5;
+box-shadow: 2px 2px 50px 2px rgba(0, 0, 0, 0.5);
 width:95vw;
 animation-duration:2s;
 background-image:linear-gradient(135deg,rgba(24, 20, 135, var(--opacty)) 0%,rgba(100, 20, 128, var(--opacty)) 99%);
