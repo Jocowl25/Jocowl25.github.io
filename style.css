@@ -168,7 +168,7 @@ font-family: "Sarala", sans-serif;
   font-style: normal;
 }
 .projectBox {
---opacty:0.5;
+--opacty:0.3;
 box-shadow: 2px 2px 50px 2px rgba(0, 0, 0, 0.5);
 width:95vw;
 animation-duration:2s;
