@@ -110,5 +110,5 @@ function fixHeight(){
     let height=document.body.scrollHeight
     document.getElementById("starholder").style.height=height+"px"
     document.getElementById("stars").style.height=height*2+"px"
-    document.getElementById("stars").style.width=height*3+"px"
+    document.getElementById("stars").style.width=height*3.2+"px"
 }
