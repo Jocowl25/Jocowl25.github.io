@@ -5,6 +5,7 @@ let close=true;
 let open=false;
 const emailwrapper = document.getElementById("emailwrapper") 
 const buttons = document.querySelectorAll("button");
+const stars=document.getElementById("stars")
 buttons.forEach(button=>{
 if(button.id!="emailclose"){
     button.addEventListener('click',()=>{
@@ -30,11 +31,10 @@ document.body.addEventListener("mousedown",(e)=>{
     }
 })
 document.body.addEventListener("mousemove",(e)=>{ //Paralax
-    let stars=document.getElementById("stars")
     let parallax=-0.04
     let x=(e.clientX - window.innerWidth/2) *parallax
     let y=(e.clientY - window.innerHeight/2) * parallax
-    stars.style.transform=`rotateZ(20deg) translateX(${x}px) translateY(${y}px)`
+   stars.style.transform=`rotateZ(20deg) translateX(${x}px) translateY(${y}px)`
 })
 
 const projectList=document.querySelectorAll(".projectBox");
@@ -56,7 +56,6 @@ function animate(i,refresh) {
     document.getElementById("scroll").style.display="none";
     let proj= projectList[i]
 	if(date=="All"||date==proj.dataset.date) {
-        console.log(proj)
         proj.style.display="grid"
 		if(elVis(proj)||(!firstElementFound)) {   
         	if(refresh) {
@@ -107,8 +106,8 @@ function elVis(el){
     return ((top > 0 && top < innerHeight) || (bottom > 0 && bottom < innerHeight))
 }
 function fixHeight(){
-    let height=document.body.scrollHeight
-    document.getElementById("starholder").style.height=height+"px"
-    document.getElementById("stars").style.height=height*2+"px"
-    document.getElementById("stars").style.width=height*3.2+"px"
+    //let height=document.body.scrollHeight
+    //document.getElementById("starholder").style.height=height+"px"
+    //stars.style.height=height*2+"px"
+    //stars.style.width=height*3.2+"px"
 }
