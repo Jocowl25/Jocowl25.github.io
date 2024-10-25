@@ -2,7 +2,6 @@ let parity=-1
 let firstElementFound;
 let date="All";
 let close=true;
-let open=false;
 const emailwrapper = document.getElementById("emailwrapper") 
 const buttons = document.querySelectorAll("button");
 const stars=document.getElementById("stars")
@@ -12,7 +11,6 @@ if(button.id!="emailclose"){
         console.clear()
         date=button.id;
         update();
-       fixHeight()
         button.style.color="white";
     })
 }
@@ -34,7 +32,7 @@ document.body.addEventListener("mousemove",(e)=>{ //Paralax
     let parallax=-0.04
     let x=(e.clientX - window.innerWidth/2) *parallax
     let y=(e.clientY - window.innerHeight/2) * parallax
-   stars.style.transform=`rotateZ(20deg) translateX(${x}px) translateY(${y}px)`
+    stars.style.transform=`translateX(${x}px) translateY(${y}px) translateY(var(--scroll)) rotateZ(20deg)`
 })
 
 const projectList=document.querySelectorAll(".projectBox");
@@ -42,20 +40,18 @@ for(let i=0;i<projectList.length;i++) {
     projectList[i].style.opacity="0%";
 }
 document.addEventListener("scroll", () => {
+    if(getComputedStyle(stars).getPropertyValue('--move')==1){
+    stars.style.setProperty("--scroll", `${-0.3*window.scrollY}px`)
+}
     for(let i=0;i<projectList.length;i++) {
     checkParity();
     animate(i,false);}
 });
-
-document.addEventListener("DOMContentLoaded", (event) => {fixHeight()});
-window.addEventListener("load", (event) => {fixHeight()}); 
-//loads twice at start- once so star bg is aligned, again so it gets to bottom of page
-
-
 function animate(i,refresh) {
     document.getElementById("scroll").style.display="none";
     let proj= projectList[i]
 	if(date=="All"||date==proj.dataset.date) {
+        console.log(proj)
         proj.style.display="grid"
 		if(elVis(proj)||(!firstElementFound)) {   
         	if(refresh) {
@@ -74,10 +70,6 @@ function animate(i,refresh) {
 		proj.style.animationName=""
         proj.style.display="none"
     }
-	if(open){
-		fixHeight()
-		open=false;
-	}
 }
 function update() {
 parity=-1
@@ -104,10 +96,4 @@ function elVis(el){
         return true;
     }
     return ((top > 0 && top < innerHeight) || (bottom > 0 && bottom < innerHeight))
-}
-function fixHeight(){
-    //let height=document.body.scrollHeight
-    //document.getElementById("starholder").style.height=height+"px"
-    //stars.style.height=height*2+"px"
-    //stars.style.width=height*3.2+"px"
 }
