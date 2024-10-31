@@ -33,7 +33,7 @@ body{
 #stars{
  /* delete later*/
  --move:1;
- --scroll:-100px;
+ --scroll:0px;
     filter: invert(100%);
     background-image: url(stars.png);
     width:2000vw;
