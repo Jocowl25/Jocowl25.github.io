@@ -117,6 +117,7 @@ body{
 	cursor:pointer;
 	top:0px;
 }
+
 @media (hover: hover) {
 .linkbutton:hover{
 	--height:min(6vw,85px);
@@ -125,6 +126,8 @@ body{
 }
 }
 button {
+	text-decoration:underline;
+
 display:inline;background:none; 
     border:none;
 	font-size:35px;
