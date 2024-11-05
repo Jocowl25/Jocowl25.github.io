@@ -8,7 +8,6 @@ const stars=document.getElementById("stars")
 buttons.forEach(button=>{
 if(button.id!="emailclose"){
     button.addEventListener('click',()=>{
-        console.clear()
         date=button.id;
         update();
         button.style.color="white";
@@ -51,7 +50,6 @@ function animate(i,refresh) {
     document.getElementById("scroll").style.display="none";
     let proj= projectList[i]
 	if(date=="All"||date==proj.dataset.date) {
-        console.log(proj)
         proj.style.display="grid"
 		if(elVis(proj)||(!firstElementFound)) {   
         	if(refresh) {
