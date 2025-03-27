@@ -16,13 +16,15 @@ if(button.id!="emailclose"){
 })
 document.getElementById("emailbutton").addEventListener("click",()=>{
     emailwrapper.style.display="flex";
+    document.getElementById("emailBox").style.display="flex";
 })
 document.getElementById("emailbutton").addEventListener("mouseleave",()=>{
     emailwrapper.style.display="none";
+    document.getElementById("emailBox").style.display="none";
     close=true
 })
 document.body.addEventListener("mousedown",(e)=>{
-    if(e.target!=document.getElementById("emailbutton")&&e.target!=document.getElementById("linkimage")&&e.target!=emailwrapper){
+    if(e.target!=document.getElementById("emailbutton")&&e.target!=document.getElementById("linkimage")&&e.target!=emailwrapper&&e.target!=document.getElementById("emailBox")){
     emailwrapper.style.display="none";
     close=true
     }

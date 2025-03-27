@@ -254,4 +254,20 @@ cursor:pointer;
 	align-items:center;
 	justify-content: center;
 	border-radius: 10px;
+	z-index:2;
+}
+#emailBox{
+	position:absolute;
+	cursor:default;
+	display:none;
+	top:calc(var(--height) - 20px);
+	left:-109%;
+	font-size:calc(var(--height) / 3);
+	padding:10px;
+	margin:0;
+	opacity:0%;
+	background-color:rgba(0, 0, 0, 20%);
+	align-items:center;
+	justify-content: center;
+	border-radius: 10px;
 }
