@@ -182,7 +182,7 @@ display:grid;
 grid-template-columns: 400px 1fr 100px;
 grid-template-rows: 50px 1fr 30px;
 column-gap: 20px;
-row-gap: 20px;
+row-gap: 30px;
 align-items:start;
 margin:20px;
 z-index:100;
@@ -191,7 +191,7 @@ padding-left:30px;
 .projectText{
 font-size:50px;
 margin-top:2px;
-padding-top:5px;
+padding-top:10px;
 	vertical-align:top;
 		grid-column: span 2;
 	display:inline;
