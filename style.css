@@ -174,13 +174,13 @@ font-family: "Sarala", sans-serif;
 .projectBox {
 --opacty:0.3;
 box-shadow: 2px 2px 50px 2px rgba(0, 0, 0, 0.5);
-width:95vw;
+width:92.5vw;
 animation-duration:2s;
 background-image:linear-gradient(135deg,rgba(24, 20, 135, var(--opacty)) 0%,rgba(100, 20, 128, var(--opacty)) 99%);
 color:white;
 display:grid;
-grid-template-columns: 400px 1fr 100px;
-grid-template-rows: 50px 1fr 30px;
+grid-template-columns: 400px 1fr 30px;
+grid-template-rows: 50px 1fr 5px;
 column-gap: 20px;
 row-gap: 30px;
 align-items:start;
@@ -191,7 +191,7 @@ padding-left:30px;
 .projectText{
 font-size:50px;
 margin-top:2px;
-padding-top:10px;
+padding-top:20px;
 	vertical-align:top;
 		grid-column: span 2;
 	display:inline;
