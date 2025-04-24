@@ -30,7 +30,10 @@ body{
 	background-image:linear-gradient(135deg,#181487 0%,purple 99%);
 	padding:0;
 }
-#stars{
+div.stars:nth-of-type(2) { --n: 3 }
+div.stars:nth-of-type(3) { --n: 2 }
+div.stars:nth-of-type(4) { --n: 1 }
+.stars{
  /* delete later*/
  --move:1;
  --scroll:0px;
@@ -42,13 +45,13 @@ body{
     position:fixed;
     top:-50%;
     left:-300%;
-    opacity: 40%; /*originally set to 40*/
+    opacity: calc(40% - (var(--n) * 10%)); /*originally set to 40*/
 	overflow:hidden;
 	transform: translateY(var(--scroll)) rotateZ(20deg);
 	z-index:-100;
 }
 @media only screen and (max-device-width: 480px){
-	#stars{
+	.stars{
 		width:200vw;
     	height:200vh;
 		top:-50%;

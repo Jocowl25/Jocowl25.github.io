@@ -4,7 +4,7 @@ let date="All";
 let close=true;
 const emailwrapper = document.getElementById("emailwrapper") 
 const buttons = document.querySelectorAll("button");
-const stars=document.getElementById("stars")
+const stars=document.querySelectorAll(".stars")
 buttons.forEach(button=>{
 if(button.id!="emailclose"){
     button.addEventListener('click',()=>{
@@ -30,10 +30,12 @@ document.body.addEventListener("mousedown",(e)=>{
     }
 })
 document.body.addEventListener("mousemove",(e)=>{ //Paralax
-    let parallax=-0.01
-    let x=(e.clientX - window.innerWidth/2) *parallax
-    let y=(e.clientY - window.innerHeight/2) * parallax
-    stars.style.transform=`translateX(${x}px) translateY(${y}px) translateY(var(--scroll)) rotateZ(20deg)`
+    stars.forEach((star,i)=>{
+        let parallax=-0.001*((i+1)*3)
+        let x=(e.clientX - window.innerWidth/2) *parallax+(i*40)
+        let y=(e.clientY - window.innerHeight/2) * parallax+(i*40)
+        star.style.transform=`translateX(${x}px) translateY(${y}px) translateY(var(--scroll)) rotateZ(20deg)`
+    })
 })
 
 const projectList=document.querySelectorAll(".projectBox");
@@ -41,9 +43,11 @@ for(let i=0;i<projectList.length;i++) {
     projectList[i].style.opacity="0%";
 }
 document.addEventListener("scroll", () => {
-    if(getComputedStyle(stars).getPropertyValue('--move')==1){
-    stars.style.setProperty("--scroll", `${-0.3*window.scrollY}px`)
+    stars.forEach((star,i)=>{
+    if(getComputedStyle(star).getPropertyValue('--move')==1){
+    star.style.setProperty("--scroll", `${(-0.3/(stars.length-(i)))*window.scrollY}px`)
 }
+    })
     for(let i=0;i<projectList.length;i++) {
     checkParity();
     animate(i,false);}
