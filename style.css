@@ -45,7 +45,7 @@ body{
     position:fixed;
     top:-50%;
     left:-300%;
-    opacity: calc(40% - (var(--n) * 10%)); /*originally set to 40*/
+    opacity: calc(40% - ((var(--n) - 1) * 15%)); /*originally set to 40*/
 	overflow:hidden;
 	transform: translateY(var(--scroll)) rotateZ(20deg);
 	z-index:-100;
