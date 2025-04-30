@@ -4,7 +4,7 @@ let date="All";
 let close=true;
 const emailwrapper = document.getElementById("emailwrapper") 
 const buttons = document.querySelectorAll("button");
-const stars=document.querySelectorAll(".stars")
+let stars=document.querySelectorAll(".stars")
 buttons.forEach(button=>{
 if(button.id!="emailclose"){
     button.addEventListener('click',()=>{
@@ -30,6 +30,10 @@ document.body.addEventListener("mousedown",(e)=>{
     }
 })
 document.body.addEventListener("mousemove",(e)=>{ //Paralax
+    if(stars.length==1){
+    document.querySelector(".starWrapper").innerHTML='<div class="stars"></div><div class="stars"></div><div class="stars"></div>'
+    stars=document.querySelectorAll(".stars")
+    }
     stars.forEach((star,i)=>{
         let parallax=-0.001*((i+1)*3)
         let x=(e.clientX - window.innerWidth/2) *parallax+(i*40)
