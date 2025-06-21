@@ -31,11 +31,11 @@ document.body.addEventListener("mousedown",(e)=>{
 })
 document.body.addEventListener("mousemove",(e)=>{ //Paralax
     if(stars.length==1){
-    document.querySelector(".starWrapper").innerHTML='<div class="stars"></div><div class="stars"></div><div class="stars"></div>'
+    //document.querySelector(".starWrapper").innerHTML='<div class="stars"></div><div class="stars"></div><div class="stars"></div>'
     stars=document.querySelectorAll(".stars")
     }
     stars.forEach((star,i)=>{
-        let parallax=-0.001*((i+1)*3)
+        let parallax=-0.002*((i+1)*3)
         let x=(e.clientX - window.innerWidth/2) *parallax+(i*40)
         let y=(e.clientY - window.innerHeight/2) * parallax+(i*40)
         star.style.transform=`translateX(${x}px) translateY(${y}px) translateY(var(--scroll)) rotateZ(20deg)`
