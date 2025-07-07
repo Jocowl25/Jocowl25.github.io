@@ -181,11 +181,11 @@ font-family: "Sarala", sans-serif;
   font-style: normal;
 }
 .projectBox {
---opacty:0.3;
+--opacity:0.3;
 box-shadow: 2px 2px 50px 2px rgba(0, 0, 0, 0.5);
 width:92.5vw;
 animation-duration:2s;
-background-image:linear-gradient(135deg,rgba(24, 20, 135, var(--opacty)) 0%,rgba(100, 20, 128, var(--opacty)) 99%);
+background-image:linear-gradient(135deg,rgba(24, 20, 135, var(--opacity)) 0%,rgba(100, 20, 128, var(--opacity)) 99%);
 color:white;
 display:grid;
 grid-template-columns: 400px 1fr 30px;

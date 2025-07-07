@@ -29,7 +29,7 @@ document.body.addEventListener("mousedown",(e)=>{
     close=true
     }
 })
-document.body.addEventListener("mousemove",(e)=>{ //Paralax  
+document.body.addEventListener("mousemove",(e)=>{ //Parallax  
     if(stars.length==1){
     //document.querySelector(".starWrapper").innerHTML='<div class="stars"></div><div class="stars"></div><div class="stars"></div>'
     stars=document.querySelectorAll(".stars")
