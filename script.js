@@ -1,6 +1,6 @@
 let parity=-1
 let firstElementFound;
-let date="All";
+let category="All";
 let close=true;
 const emailwrapper = document.getElementById("emailwrapper") 
 const buttons = document.querySelectorAll("button");
@@ -8,7 +8,7 @@ let stars=document.querySelectorAll(".stars")
 buttons.forEach(button=>{
 if(button.id!="emailclose"){
     button.addEventListener('click',()=>{
-        date=button.id;
+        category=button.id;
         update();
         button.style.color="white";
     })
@@ -46,6 +46,7 @@ document.body.addEventListener("mousemove",(e)=>{ //Parallax
 })
 
 const projectList=document.querySelectorAll(".projectBox");
+let activeProjectList=projectList;
 for(let i=0;i<projectList.length;i++) {
     projectList[i].style.opacity="0%";
 }
@@ -55,15 +56,13 @@ document.addEventListener("scroll", () => {
     star.style.setProperty("--scroll", `${(-0.3/(stars.length-(i)))*window.scrollY+(i*30)}px`)
 }
     })
-    for(let i=0;i<projectList.length;i++) {
+    for(let i=0;i<activeProjectList.length;i++) {
     checkParity();
     animate(i,false);}
 });
 function animate(i,refresh) {
     document.getElementById("scroll").style.display="none";
-    let proj= projectList[i]
-	if(date=="All"||date==proj.dataset.date) {
-        proj.style.display="grid"
+    let proj= activeProjectList[i]
 		if(elVis(proj)||(!firstElementFound)) {   
         	if(refresh) {
                  proj.style.animationName = 'none';
@@ -76,25 +75,41 @@ function animate(i,refresh) {
 			    proj.style.animationName=""
     	    }
             firstElementFound=true;
-    } else {
-      	proj.style.opacity="0%";
-		proj.style.animationName=""
-        proj.style.display="none"
-    }
 }
 function update() {
 parity=-1
-for(x = 0; x < buttons.length; x++){buttons[x].style.color = '#8fdef2';}
+for(x = 0; x < buttons.length; x++)
+    {buttons[x].style.color = '#8fdef2';
+
+    }
  firstElementFound=false;
+ projectList.forEach((ele)=>{
+        ele.style.display="grid"
+
+    })
+ if(category!="All"){
+    activeProjectList=[]
+    projectList.forEach((ele)=>{
+        if(ele.dataset.cat==category){
+            activeProjectList.push(ele)
+        }else{
+        ele.style.opacity="0%";
+		ele.style.animationName=""
+        ele.style.display="none"
+        }
+    })
+ }else{
+    activeProjectList=projectList
+}
    checkParity();
-    for(let i=0;i<projectList.length;i++) {
+    for(let i=0;i<activeProjectList.length;i++) {
     animate(i,true);
     }
 }
 function checkParity(){
 	 parity=-1;
-    for(let i=0;i<projectList.length;i++){
-    	if((date=="All"||date==projectList[i].dataset.date)&&parity==-1){
+    for(let i=0;i<activeProjectList.length;i++){
+    	if((category=="All"||category==activeProjectList[i].dataset.cat)&&parity==-1){
             parity=i%2;
         }
     }
