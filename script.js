@@ -35,7 +35,7 @@ document.body.addEventListener("mousemove",(e)=>{ //Parallax
         let y=(e.clientY - window.innerHeight/2) * parallax+40
         star.style.transform=`translateX(${x}px) translateY(${y}px) translateY(var(--scroll)) rotateZ(20deg)`
         if(getComputedStyle(star).getPropertyValue('--move')==1){
-            star.style.setProperty("--scroll", `${-0.3*window.scrollY+(i*30)}px`)
+            star.style.setProperty("--scroll", `${-0.3*window.scrollY+30}px`)
         }
 
 })
