@@ -54,13 +54,12 @@ document.addEventListener("scroll", () => {
     star.style.setProperty("--scroll", `${(-0.3/(stars.length-(i)))*window.scrollY+(i*30)}px`)
 }
     })
-    for(let i=0;i<activeProjectList.length;i++) {
-    animate(i,false);
-}
+    activeProjectList.forEach((ele,i)=>{
+        animate(ele,i,false)
+    })
 });
-function animate(i,refresh) {
+function animate(proj,i,refresh) {
     document.getElementById("scroll").style.display="none";
-    let proj= activeProjectList[i]
 		if(elVis(proj)) {   
         	if(refresh) {
                  proj.style.animationName = 'none';
@@ -68,7 +67,7 @@ function animate(i,refresh) {
        		}
 			i%2==0?proj.style.animationName="FadeLeft":proj.style.animationName="FadeRight"         
      	    proj.style.opacity="90%";
-		    } else if(!elVis(proj)){
+		    } else{
                 proj.style.opacity="0%";
 			    proj.style.animationName=""
     	    }
@@ -78,27 +77,20 @@ for(x = 0; x < buttons.length; x++)
     {buttons[x].style.color = '#8fdef2';
 
     }
- projectList.forEach((ele)=>{
-        ele.style.display="grid"
-
-    })
- if(category!="All"){
     activeProjectList=[]
+    let activeIndex=0;
     projectList.forEach((ele)=>{
-        if(ele.dataset.cat==category){
+        if(ele.dataset.cat==category||category=="All"){
+            ele.style.display="grid"
             activeProjectList.push(ele)
+            animate(ele,activeIndex,true)
+            activeIndex++
         }else{
         ele.style.opacity="0%";
 		ele.style.animationName=""
         ele.style.display="none"
         }
     })
- }else{
-    activeProjectList=projectList
-}
-    for(let i=0;i<activeProjectList.length;i++) {
-    animate(i,true);
-    }
 }
 
 function elVis(el){
