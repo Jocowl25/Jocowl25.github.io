@@ -2,7 +2,7 @@ let category="All";
 let close=true;
 const emailwrapper = document.getElementById("emailwrapper") 
 const buttons = document.querySelectorAll("button");
-let stars=document.querySelectorAll(".stars")
+let star=document.querySelector(".stars")
 buttons.forEach(button=>{
 if(button.id!="emailclose"){
     button.addEventListener('click',()=>{
@@ -28,19 +28,15 @@ document.body.addEventListener("mousedown",(e)=>{
     }
 })
 document.body.addEventListener("mousemove",(e)=>{ //Parallax  
-    if(stars.length==1){
-    //document.querySelector(".starWrapper").innerHTML='<div class="stars"></div><div class="stars"></div><div class="stars"></div>'
-    stars=document.querySelectorAll(".stars")
-    }
-    stars.forEach((star,i)=>{
-        let parallax=-0.002*((i+1)*3)
-        let x=(e.clientX - window.innerWidth/2) *parallax+(i*40)
-        let y=(e.clientY - window.innerHeight/2) * parallax+(i*40)
+
+        let parallax=-0.002*3
+        let x=(e.clientX - window.innerWidth/2) *parallax+40
+        let y=(e.clientY - window.innerHeight/2) * parallax+40
         star.style.transform=`translateX(${x}px) translateY(${y}px) translateY(var(--scroll)) rotateZ(20deg)`
         if(getComputedStyle(star).getPropertyValue('--move')==1){
-            star.style.setProperty("--scroll", `${(-0.3/(stars.length-(i)))*window.scrollY+(i*30)}px`)
+            star.style.setProperty("--scroll", `${-0.3*window.scrollY+(i*30)}px`)
         }
-    })
+
 })
 
 const projectList=document.querySelectorAll(".projectBox");
@@ -49,13 +45,12 @@ for(let i=0;i<projectList.length;i++) {
     projectList[i].style.opacity="0%";
 }
 document.addEventListener("scroll", () => {
-    stars.forEach((star,i)=>{
     if(getComputedStyle(star).getPropertyValue('--move')==1){
-    star.style.setProperty("--scroll", `${(-0.3/(stars.length-(i)))*window.scrollY+(i*30)}px`)
+    star.style.setProperty("--scroll", `${-0.3*window.scrollY+30}px`)
 }
-    })
+
     activeProjectList.forEach((ele,i)=>{
-        animate(ele,i,false)
+        requestAnimationFrame(animate.bind(this,ele,i,false))
     })
 });
 function animate(proj,i,refresh) {
