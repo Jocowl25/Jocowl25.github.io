@@ -4,13 +4,14 @@ const emailwrapper = document.getElementById("emailwrapper")
 const buttons = document.querySelectorAll("button");
 let star=document.querySelector(".stars")
 buttons.forEach(button=>{
-if(button.id!="emailclose"){
     button.addEventListener('click',()=>{
+        buttons.forEach((ele)=>{
+            ele.style.color = '#8fdef2';
+        })
         category=button.id;
         update();
         button.style.color="white";
     })
-}
 })
 document.getElementById("emailbutton").addEventListener("click",()=>{
     emailwrapper.style.display="flex";
@@ -41,9 +42,6 @@ document.body.addEventListener("mousemove",(e)=>{ //Parallax
 
 const projectList=document.querySelectorAll(".projectBox");
 let activeProjectList=projectList;
-for(let i=0;i<projectList.length;i++) {
-    projectList[i].style.opacity="0%";
-}
 document.addEventListener("scroll", () => {
     if(getComputedStyle(star).getPropertyValue('--move')==1){
     star.style.setProperty("--scroll", `${-0.3*window.scrollY+30}px`)
@@ -68,10 +66,6 @@ function animate(proj,i,refresh) {
     	    }
 }
 function update() {
-for(x = 0; x < buttons.length; x++)
-    {buttons[x].style.color = '#8fdef2';
-
-    }
     activeProjectList=[]
     let activeIndex=0;
     projectList.forEach((ele)=>{

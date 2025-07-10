@@ -196,6 +196,7 @@ align-items:start;
 margin:20px;
 z-index:100;
 padding-left:30px;
+opacity:0;
 }
 .projectText{
 font-size:50px;
