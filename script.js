@@ -50,7 +50,7 @@ document.addEventListener("scroll", () => {
 }
 
     activeProjectList.forEach((ele,i)=>{
-        requestAnimationFrame(animate.bind(this,ele,i,false))
+        animate(ele,i,false)
     })
 });
 function animate(proj,i,refresh) {
