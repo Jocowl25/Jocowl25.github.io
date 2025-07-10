@@ -1,5 +1,3 @@
-let parity=-1
-let firstElementFound;
 let category="All";
 let close=true;
 const emailwrapper = document.getElementById("emailwrapper") 
@@ -57,32 +55,29 @@ document.addEventListener("scroll", () => {
 }
     })
     for(let i=0;i<activeProjectList.length;i++) {
-    checkParity();
-    animate(i,false);}
+    animate(i,false);
+}
 });
 function animate(i,refresh) {
     document.getElementById("scroll").style.display="none";
     let proj= activeProjectList[i]
-		if(elVis(proj)||(!firstElementFound)) {   
+		if(elVis(proj)) {   
         	if(refresh) {
                  proj.style.animationName = 'none';
                  proj.offsetHeight;
        		}
-			i%2==parity?proj.style.animationName="FadeLeft":proj.style.animationName="FadeRight"         
+			i%2==0?proj.style.animationName="FadeLeft":proj.style.animationName="FadeRight"         
      	    proj.style.opacity="90%";
 		    } else if(!elVis(proj)){
                 proj.style.opacity="0%";
 			    proj.style.animationName=""
     	    }
-            firstElementFound=true;
 }
 function update() {
-parity=-1
 for(x = 0; x < buttons.length; x++)
     {buttons[x].style.color = '#8fdef2';
 
     }
- firstElementFound=false;
  projectList.forEach((ele)=>{
         ele.style.display="grid"
 
@@ -101,17 +96,8 @@ for(x = 0; x < buttons.length; x++)
  }else{
     activeProjectList=projectList
 }
-   checkParity();
     for(let i=0;i<activeProjectList.length;i++) {
     animate(i,true);
-    }
-}
-function checkParity(){
-	 parity=-1;
-    for(let i=0;i<activeProjectList.length;i++){
-    	if((category=="All"||category==activeProjectList[i].dataset.cat)&&parity==-1){
-            parity=i%2;
-        }
     }
 }
 
