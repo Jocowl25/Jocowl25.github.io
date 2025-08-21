@@ -30,6 +30,9 @@ body{
 	background-image:linear-gradient(135deg,#181487 0%,purple 99%);
 	padding:0;
 }
+#scroll{
+	font-style:italic;
+}
 .starWrapper:nth-child(1) { --n: 3 }
 .starWrapper:nth-child(2) { --n: 2 }
 .starWrapper:nth-child(3) { --n: 1 }
@@ -97,7 +100,7 @@ body{
 	width:95vw;
 	margin-bottom:2px;
 }
-.buttonwrapper{
+.buttonWrapper{
 	position:relative;
 	top:14px;
 	height:100%;
@@ -112,12 +115,13 @@ body{
 .linkimage{
 	width:var(--height);
 	height:var(--height);
-	margin:none;
+	margin:0;
 	border-radius: 200px; /* need this for normal border */
 	line-height: 1em;
+	padding:0;
 }
 .linkbutton{
-	line-height: 1em;
+	line-height: 0;
 	border-radius: 200px; /* need this for glowy border */
 	--height:min(5vw,80px);
 	text-align:center;
@@ -125,6 +129,7 @@ body{
 	position:relative;
 	cursor:pointer;
 	top:0px;
+	padding:0;
 }
 
 @media (hover: hover) {
